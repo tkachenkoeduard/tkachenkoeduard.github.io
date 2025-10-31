@@ -12,5 +12,31 @@
 <a href="matreshka://mig/">matreshka://mig</a>
 <a href="matreshka://mig/WgIAVkkQwgA">matreshka://mig/WgIAVkkQwgA</a>
 <a href="matreshka://video/KgFAcDPHuAA">matreshka://video/KgFAcDPHuAA</a>
+
+<button onclick="handleOpenApp">matreshka://</button>
+
+<button onclick="handleTimeout">with timeout</button>
+<script>
+  function handleOpenApp() {
+      let route = `matreshka://`
+      let res = null
+      try {
+        res = window.open(route, '_self')
+        console.log('res',res)
+      } catch (e) {
+        console.log('myerror', e)
+      }
+      finally {
+        console.log('finally res',res)
+      }
+    }
+
+    function handleTimeout(){
+      window.open(`matreshka://`, '_self')
+      setTimeout(()=>{
+        window.open('https://www.rustore.ru/catalog/app/com.matreshka', '_target')
+      }, 500) 
+    }
+</script>
 </body>
 </html>
