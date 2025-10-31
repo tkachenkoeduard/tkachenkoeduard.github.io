@@ -7,21 +7,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body>
+<body style="padding-bottom: 40px;">
 <iframe src="https://matreshka.tv/embed/video/4AKgGMe4z-8" frameborder="0" width="600" height="600"></iframe>
 <a href="matreshka://mig/">matreshka://mig</a>
 <a href="matreshka://mig/WgIAVkkQwgA">matreshka://mig/WgIAVkkQwgA</a>
 <a href="matreshka://video/KgFAcDPHuAA">matreshka://video/KgFAcDPHuAA</a>
 
-<button onclick="handleOpenApp()">matreshka://</button>
+<button onclick="handleOpenApp()">handleOpenApp</button>
 
-<button onclick="handleTimeout()">with timeout</button>
+<button onclick="handleTimeout()">handleTimeout</button>
+
+<button onclick="handleLocationDirect()">handleLocationDirect</button>
+
+<button onclick="handleTimeoutNoOptions()"handleTimeoutNoOptions</button>
 <script>
   function handleOpenApp() {
       let route = `matreshka://`
       let res = null
       try {
-        res = window.open(route, '_self')
+        res = window.open(route, '_target')
         console.log('res',res)
       } catch (e) {
         console.log('myerror', e)
@@ -32,9 +36,29 @@
     }
 
     function handleTimeout(){
-      window.open(`matreshka://`, '_self')
+      window.open(`matreshka://`, '_target')
       setTimeout(()=>{
         window.open('https://www.rustore.ru/catalog/app/com.matreshka', '_target')
+      }, 500) 
+    }
+
+    function handleLocationDirect(){
+      let route = `matreshka://`
+      let res = null
+      try {
+        window.location.href = route
+      } catch (e) {
+        console.log('handleLocationDirect myerror', e)
+      }
+      finally {
+        console.log('handleLocationDirect finally res',res)
+      }
+    }
+
+    function handleTimeoutNoOptions(){
+      window.open(`matreshka://`)
+      setTimeout(()=>{
+        window.open('https://www.rustore.ru/catalog/app/com.matreshka')
       }, 500) 
     }
 </script>
