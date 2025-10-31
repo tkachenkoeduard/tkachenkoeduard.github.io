@@ -9,17 +9,26 @@
 </head>
 <body style="padding-bottom: 40px;">
 <iframe src="https://matreshka.tv/embed/video/4AKgGMe4z-8" frameborder="0" width="600" height="600"></iframe>
-<a href="matreshka://mig/">matreshka://mig</a>
-<a href="matreshka://mig/WgIAVkkQwgA">matreshka://mig/WgIAVkkQwgA</a>
-<a href="matreshka://video/KgFAcDPHuAA">matreshka://video/KgFAcDPHuAA</a>
 
-<button onclick="handleOpenApp()">handleOpenApp</button>
+<a href="matreshka://mig/"  style="margin:40px">matreshka://mig</a>
 
-<button onclick="handleTimeout()">handleTimeout</button>
+<a href="matreshka://mig/WgIAVkkQwgA"  style="margin:40px">matreshka://mig/WgIAVkkQwgA</a>
 
-<button onclick="handleLocationDirect()">handleLocationDirect</button>
+<a 
+href="matreshka://"
+ onclick="setTimeout(() => { window.location = 'https://www.rustore.ru/catalog/app/com.matreshka'; }, 500);"
+  style="margin:40px"
+>
+matreshka://
+</a>
 
-<button onclick="handleTimeoutNoOptions()"handleTimeoutNoOptions</button>
+<button onclick="handleOpenApp()" style="margin:40px">handleOpenApp</button>
+
+<button onclick="handleTimeout()"  style="margin:40px">handleTimeout</button>
+
+<button onclick="handleLocationDirect()"  style="margin:40px">handleLocationDirect</button>
+
+<button onclick="handleTimeoutNoOptions()"  style="margin:40px">handleTimeoutNoOptions</button>
 <script>
   function handleOpenApp() {
       let route = `matreshka://`
