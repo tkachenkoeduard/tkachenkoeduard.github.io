@@ -34,7 +34,7 @@ matreshka://
       let route = `matreshka://`
       let res = null
       try {
-        res = window.open(route, '_target')
+        res = window.open(route, '_self')
         console.log('res',res)
       } catch (e) {
         console.log('myerror', e)
