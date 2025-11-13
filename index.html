@@ -6,29 +6,15 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <meta property="al:android:package" content="com.matreshka"/>
+    <meta property="al:android:app_name" content="Matreshka"/>
+    <meta property="al:android:url" content="matreshka://mig">
 </head>
 <body style="padding-bottom: 40px;">
-<iframe src="https://matreshka.tv/embed/video/4AKgGMe4z-8" frameborder="0" width="600" height="600"></iframe>
 
-<a href="matreshka://mig/"  style="margin:40px">matreshka://mig</a>
 
-<a href="matreshka://mig/WgIAVkkQwgA"  style="margin:40px">matreshka://mig/WgIAVkkQwgA</a>
+<button onclick="handleTimeout()" style="margin:40px">handleOpenApp</button>
 
-<a 
-href="matreshka://"
- onclick="setTimeout(() => { window.location = 'https://www.rustore.ru/catalog/app/com.matreshka'; }, 500);"
-  style="margin:40px"
->
-matreshka://
-</a>
-
-<button onclick="handleOpenApp()" style="margin:40px">handleOpenApp</button>
-
-<button onclick="handleTimeout()"  style="margin:40px">handleTimeout</button>
-
-<button onclick="handleLocationDirect()"  style="margin:40px">handleLocationDirect</button>
-
-<button onclick="handleTimeoutNoOptions()"  style="margin:40px">handleTimeoutNoOptions</button>
 <script>
   function handleOpenApp() {
       let route = `matreshka://`
@@ -43,31 +29,10 @@ matreshka://
         console.log('finally res',res)
       }
     }
-
     function handleTimeout(){
       window.open(`matreshka://`, '_target')
       setTimeout(()=>{
         window.open('https://www.rustore.ru/catalog/app/com.matreshka', '_target')
-      }, 500) 
-    }
-
-    function handleLocationDirect(){
-      let route = `matreshka://`
-      let res = null
-      try {
-        window.location.href = route
-      } catch (e) {
-        console.log('handleLocationDirect myerror', e)
-      }
-      finally {
-        console.log('handleLocationDirect finally res',res)
-      }
-    }
-
-    function handleTimeoutNoOptions(){
-      window.open(`matreshka://`)
-      setTimeout(()=>{
-        window.open('https://www.rustore.ru/catalog/app/com.matreshka')
       }, 500) 
     }
 </script>
