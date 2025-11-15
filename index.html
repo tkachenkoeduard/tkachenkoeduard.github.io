@@ -13,20 +13,20 @@
 <body style="padding-bottom: 40px;">
 
 
-<button onclick="handleTimeout()" style="margin:40px">handleOpenApp</button>
+<button onclick="handleOpenApp()" style="margin:40px">handleOpenApp</button>
 
 <script>
   function handleOpenApp() {
       let route = `matreshka://`
       let res = null
       try {
-        res = window.open(route, '_self')
+        res = window.open(route)
         console.log('res',res)
       } catch (e) {
         console.log('myerror', e)
       }
       finally {
-        console.log('finally res',res)
+        console.log('finally res')
       }
     }
     function handleTimeout(){
